@@ -1,0 +1,58 @@
+---
+server:
+  port: 7000
+spring:
+  application:
+    name: spring-cloud-config-server
+  profiles: config-server-1
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://dev.cedarhd.com/git/yanglinan/spring-cloud-config.git     # 配置git仓库的地址
+          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username:                                         # git仓库的账号
+          password:                                     # git仓库的密码
+#  rabbitmq:
+#    host: 192.168.0.6
+#    port: 5672
+#    username: admin
+#    password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/   ## 注册中心eurka地址
+
+management:
+  security:
+     enabled: false
+---
+server:
+  port: 7001
+spring:
+  application:
+    name: spring-cloud-config-server
+  profiles: config-server-2
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://dev.cedarhd.com/git/yanglinan/spring-cloud-config.git     # 配置git仓库的地址
+          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username:                                         # git仓库的账号
+          password:                                     # git仓库的密码
+#  rabbitmq:
+#    host: 192.168.0.6
+#    port: 5672
+#    username: admin
+#    password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/   ## 注册中心eurka地址
+
+management:
+  security:
+     enabled: false

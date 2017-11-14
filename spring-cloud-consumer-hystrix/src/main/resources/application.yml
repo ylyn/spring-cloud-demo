@@ -1,0 +1,20 @@
+---
+spring:
+  application:
+    name: spring-cloud-consumer-hystrix
+  profiles: hystrix-1
+server:
+  port: 9001
+feign:
+  hystrix:
+    enabled: true
+---
+spring:
+  application:
+    name: spring-cloud-consumer-hystrix
+  profiles: hystrix-2
+server:
+  port: 9002
+feign:
+  hystrix:
+    enabled: true
